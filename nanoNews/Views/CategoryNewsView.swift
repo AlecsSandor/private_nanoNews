@@ -18,8 +18,8 @@ struct CategoryNewsView: View {
     }
     
     var body: some View {
-        ZStack {
-            Color("themeBlack").ignoresSafeArea()
+        ZStack(alignment: .top) {
+//            Color("themeBlack").ignoresSafeArea()
             
             if vm.isLoading {
                 ProgressView("Loading…")
@@ -34,12 +34,60 @@ struct CategoryNewsView: View {
                     }
                     .padding(.vertical)
                 }
+                .background(Color("themeBlack"))
                 .onAppear {
                     vm.notifications.forEach { news in
                         print("News title: \(news.title)")
                     }
                 }
             }
+            
+            // TOP FADE
+                    VStack {
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                Color("themeBlack"),
+                                Color.black.opacity(0)
+                            ]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                        .frame(height: 100)      // increased height for better fade
+                        .allowsHitTesting(false) // important so scroll still works
+
+                        Spacer()
+                    }
+//                    .ignoresSafeArea()
+                    
+                    // BOTTOM FADE
+                    VStack {
+                        Spacer()
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                Color.black.opacity(0),
+                                Color("themeBlack")
+                            ]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                        .frame(height: 100)      // increased height for better fade
+                        .allowsHitTesting(false) // important
+                    }
+                    .ignoresSafeArea()
+            
+//            // TOP GLASS FADE
+//                    VStack {
+//                        BlurFade(height: 120, isTop: true)
+//                            .allowsHitTesting(false)
+//                        Spacer()
+//                    }
+//
+//                    // BOTTOM GLASS FADE
+//                    VStack {
+//                        Spacer()
+//                        BlurFade(height: 120, isTop: false)
+//                            .allowsHitTesting(false)
+//                    }
         }
         //        .navigationTitle(category.capitalized)
         .toolbar {
@@ -84,3 +132,23 @@ struct CategoryNewsView: View {
     }
 }
 
+struct BlurFade: View {
+    let height: CGFloat
+    let isTop: Bool
+
+    var body: some View {
+        Rectangle()
+            .fill(.ultraThinMaterial)  // blur glass layer
+            .overlay(
+                LinearGradient(
+                    colors: isTop
+                        ? [Color.black.opacity(0.35), Color.black.opacity(0.0)]
+                        : [Color.black.opacity(0.0), Color.black.opacity(0.35)],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .blur(radius: 6)   // softens the edges for a true glass feel
+            .frame(height: height)
+    }
+}

@@ -75,5 +75,60 @@ let dummyNews: [NotificationNewsModel] = [
         imageURL: "https://picsum.photos/200/200?random=5",
         publishedAt: makeDate(2025, 11, 16, 10, 0),
         isBreaking: false
-    )
+    ),
+    NotificationNewsModel(
+        id: 6,
+        category: "artificial_intelligence",
+        title: "OpenAI Releases New Edge-Optimized Model",
+        summary: "OpenAI introduced a lightweight model designed for fast on-device inference. Early tests show a 40% speed improvement while using less power.",
+        source: "TechCrunch",
+        sourceURL: "https://example.com/article/openai-model",
+        imageURL: "https://picsum.photos/200/200?random=1",
+        publishedAt: makeDate(2025, 11, 20, 14, 52),
+        isBreaking: false
+    ),
+    NotificationNewsModel(
+        id: 7,
+        category: "artificial_intelligence",
+        title: "OpenAI Releases New Edge-Optimized Model",
+        summary: "OpenAI introduced a lightweight model designed for fast on-device inference. Early tests show a 40% speed improvement while using less power.",
+        source: "TechCrunch",
+        sourceURL: "https://example.com/article/openai-model",
+        imageURL: "https://picsum.photos/200/200?random=1",
+        publishedAt: makeDate(2025, 11, 20, 14, 52),
+        isBreaking: false
+    ),
+    NotificationNewsModel(
+        id: 8,
+        category: "artificial_intelligence",
+        title: "OpenAI Releases New Edge-Optimized Model",
+        summary: "OpenAI introduced a lightweight model designed for fast on-device inference. Early tests show a 40% speed improvement while using less power.",
+        source: "TechCrunch",
+        sourceURL: "https://example.com/article/openai-model",
+        imageURL: "https://picsum.photos/200/200?random=1",
+        publishedAt: makeDate(2025, 11, 20, 14, 52),
+        isBreaking: false
+    ),
+    NotificationNewsModel(
+        id: 9,
+        category: "artificial_intelligence",
+        title: "OpenAI Releases New Edge-Optimized Model",
+        summary: "OpenAI introduced a lightweight model designed for fast on-device inference. Early tests show a 40% speed improvement while using less power.",
+        source: "TechCrunch",
+        sourceURL: "https://example.com/article/openai-model",
+        imageURL: "https://picsum.photos/200/200?random=1",
+        publishedAt: makeDate(2025, 11, 20, 14, 52),
+        isBreaking: false
+    ),
+    NotificationNewsModel(
+        id: 10,
+        category: "artificial_intelligence",
+        title: "OpenAI Releases New Edge-Optimized Model",
+        summary: "OpenAI introduced a lightweight model designed for fast on-device inference. Early tests show a 40% speed improvement while using less power.",
+        source: "TechCrunch",
+        sourceURL: "https://example.com/article/openai-model",
+        imageURL: "https://picsum.photos/200/200?random=1",
+        publishedAt: makeDate(2025, 11, 20, 14, 52),
+        isBreaking: false
+    ),
 ]

@@ -28,7 +28,7 @@ struct ContentView: View {
         HoneycombItem(imageName: "Markets",    activatedImageName: "Markets_On",    category: "artificial_intelligence"),
         HoneycombItem(imageName: "Movies",     activatedImageName: "Movies_On",     category: "nanotechnology"),
         HoneycombItem(imageName: "Politics",   activatedImageName: "Politics_On",   category: "blockchain"),     // duplicate name, but OK
-        HoneycombItem(imageName: "Realestate", activatedImageName: "Realestate_On", category: "fashion-tech"),
+        HoneycombItem(imageName: "RealEstate", activatedImageName: "RealEstate_On", category: "fashion-tech"),
         HoneycombItem(imageName: "Science",    activatedImageName: "Science_On",    category: "space-tech"),
         HoneycombItem(imageName: "Space",      activatedImageName: "Space_On",      category: "nanotechnology"),
         HoneycombItem(imageName: "Sports",     activatedImageName: "Sports_On",     category: "blockchain"),     // duplicate name, but OK
@@ -43,7 +43,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
+            ZStack(alignment: .top) {
                     
                     HoneycombMenuView(
                         viewModel: vm,
@@ -67,7 +67,6 @@ struct ContentView: View {
                             )
                             .zIndex(10)
                     }
-
                 }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -102,7 +101,7 @@ struct ContentView: View {
                         Button(action: {
                         })
                         {
-                            Image("_05")
+                            Image("appIcon")
                                 .resizable()
                                 .frame(width: 35, height: 35)
                         }

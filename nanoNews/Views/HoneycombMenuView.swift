@@ -22,8 +22,8 @@ struct HoneycombMenuView: View {
     @State private var accumulatedOffset: CGSize = .zero
     
     // Grid layout
-    let columns = 3
-    let rows = 3
+    let columns = 4
+    let rows = 4
     
     // Magnification curve parameter (matches UIKit)
     let magnificationCurve: CGFloat = 30
